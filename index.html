@@ -6,26 +6,20 @@
     <title>Loja</title>
 </head>
 <body>
-    <div id="produtos">
-
-
-    </div>
-
-    <div id="carrinho "> 
-
-    </div>
-
-    <!DOCTYPE html>
-<html>
-<head>
-    <title>Sua Loja</title>
-</head>
-<body>
+    
     <div id="header">
     </div>
-    <div id="produtos"> <h1>CARRINHO</h1></div>
+    <div id="produtos"> 
         
-    <div id="carrinho"></div>
+        
+    </div>
+        
+    <div id="carrinho">
+        
+    </div>
+
+    <div id="botao"></div>
+    
 
     <script>
         const itens = [
@@ -77,28 +71,36 @@
             });
 
             
+            
             adicionarEventListeners();
         }
 
         const atualizarCarrinho = () => {
+
+            
             const carrinho = document.getElementById('carrinho');
             carrinho.innerHTML = '';
             let total = 0;
-
+            carrinho.innerHTML += `
+                <h1>CARRINHO</h1>`;
+                
             itens.map((val) => {
                 if (val.quantidade > 0) {
                     total += val.quantidade * val.preco;
                     carrinho.innerHTML += `
                         <div class="carrinho-item">
                             <p>${val.nome} - Quantidade: ${val.quantidade} - Preço: R$${(val.quantidade * val.preco).toFixed(2)}</p>
-                            
+                            <img src="${val.img}" alt="${val.nome}" class="carrinho-imagem">
                         </div>
                     `;
                 }
             });
+
             carrinho.innerHTML += `<p>Total: R$${total.toFixed(2)}</p>`;
         }
 
+        
+    
         const adicionarEventListeners = () => {
             const links = document.querySelectorAll('a');
 
