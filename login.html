@@ -14,16 +14,16 @@
     <div id=campo-login>
         <h1 id="txt">Login</h1>
         <div id="campo-um">
-             Usuário
-            <input class="input-estilo" type="text" value="Usuário">
+            Usuário
+             <input type="text" placeholder="Digite o seu login" id="nome" name="login"></input>
             Senha
-            <input type="text" value="Senha" > 
+            <input type="password" placeholder="Digite a sua senha" id="senha" name="senha"></input>
         </div> 
 
 
         <div id="campo-dois">
-            <button type="button" onclick="cadastrar()">Cadastre-se</button>
-            <button>Logar</button> 
+            <button type="submit" onclick="redirecionarCadastro()">Cadastre-se</button>
+            <button type="submit" onclick="login()">Logar</button> 
         </div>
     </div>
         
